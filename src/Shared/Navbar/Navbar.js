@@ -99,7 +99,7 @@ const Navbar = () => {
                     </div>
                 </div>
                 <div className={(showNav ? "top-[75px] bg-[#181818]" : "-top-full") + " fixed text-white h-[260px] rounded w-full space-y-3 items-center transition-top duration-500 ease-in-out text-center"}>
-                    <div className='mt-2 md:mt-0 hover:text-[#0E9CF6]'>
+                    <div className='mt-2 md:mt-0 '>
                         <NavLink to='/'>Home</NavLink>
                     </div>
                     <div className=''>
