@@ -14,9 +14,9 @@ const PartsCard = ({ part, refetch }) => {
                         </div>
                     </div>
                 </div>
-                <div className='h-[450px] md:h-[365px] p-4 '>
+                <div className='h-[350px] md:h-[330px] p-4 '>
                     <p className='bg-black text-white hover:text-gray-200 text-xl font-medium text-center p-2 rounded-sm mb-2'>{name}</p>
-                    <p className=' text-base tracking-tight text-justify mb-2 h-[200px] md:h-[135px] flex items-center overflow-hidden'>{description}</p>
+                    <p className=' text-base tracking-tight text-justify mb-2 h-[120px] md:h-[100px] flex items-center overflow-hidden'>{description}</p>
                     <hr className='mb-2' />
                     <p className='text-center font-medium mb-1'>Minimum order quantity: {orderQuantity}</p>
                     <p className='text-center font-medium mb-2'>Available in stock: {availableQuantity}</p>
