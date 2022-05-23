@@ -1,0 +1,56 @@
+[
+    {
+        "name": "MBRP Cat Exhaust System",
+        "image": "https://i.ibb.co/dLJMFm5/mbrp-cat-exhaust.jpg",
+        "user": "",
+        "price": "$350",
+        "orderQuantity": 10,
+        "availableQuantity": 350,
+        "description": "Smooth Mandrel Bent Tubing, Fully Sealed Seams for Rust Resistance, Signature MBRP Styling and Sound, 3.5 OD Out Dual Walled Black Tips Included."
+    },
+    {
+        "name": "Vossen Precision VPS-306",
+        "image": "https://i.ibb.co/tCS4XYC/vossen-vpn.png",
+        "user": "",
+        "price": "$230",
+        "orderQuantity": 20,
+        "availableQuantity": 500,
+        "description": "Signature 30-degree cut angles combined with the perfect lip-to-barrel transition of the Infini-Lip™ distinguish the VPS-306 from other forged wheels, as part of the Precision Series."
+    },
+    {
+        "name": "Power Stop Caliper Covers",
+        "image": "https://i.ibb.co/R33Qzn3/power-stop.jpg",
+        "user": "",
+        "price": "$250",
+        "orderQuantity": 15,
+        "availableQuantity": 300,
+        "description": "Electrostatic powder paint resists corrosion, 100 percent pressure tested to prevent leaks, Brand new components including bleeder screw, hardware and pins, High temperature EPDM rubber for extended life."
+    },
+    {
+        "name": "Rubber Custom Fit Floor Mats",
+        "image": "https://i.ibb.co/gmPMBjQ/rubber-custom.jpg",
+        "user": "",
+        "price": "$65",
+        "orderQuantity": 25,
+        "availableQuantity": 600,
+        "description": "These floor mats are compatible with 2019 2020 2021 2022 Honda Passport. 3D laser scanning technology gives full protection to both the front and back. These mats are not for vehicles with vinyl floors."
+    },
+    {
+        "name": "OE Replacement Calipers",
+        "image": "https://i.ibb.co/2yq2d0W/OE-replacement.jpg",
+        "user": "",
+        "price": "$225",
+        "orderQuantity": 20,
+        "availableQuantity": 300,
+        "description": "Better Stopping Power. High temperature EPDM rubber dust boots and premium silicone lubricant are used for a smoother operation and an extended life in extreme conditions."
+    },
+    {
+        "name": "X4 Power Flash Programmer",
+        "image": "https://i.ibb.co/MCMLYLp/x4-power-flash.jpg",
+        "user": "",
+        "price": "$400",
+        "orderQuantity": 15,
+        "availableQuantity": 320,
+        "description": "The X4 Performance Programmer connects high-performance tunes to your vehicle for a boost in horsepower & torque. Awaken your engine to its real potential with preloaded, dyno-proven tune files through the easy-to-use functionality."
+    }
+]
