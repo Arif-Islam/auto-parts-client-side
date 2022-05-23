@@ -1,7 +1,6 @@
 import React from 'react';
 import CountUp from "react-countup";
 import VisibilitySensor from "react-visibility-sensor";
-import bgImg from '../../../images/bg.png';
 import { FaRegFlag } from 'react-icons/fa';
 import { MdDeliveryDining } from 'react-icons/md';
 import { BsFillPeopleFill } from 'react-icons/bs';
@@ -9,10 +8,10 @@ import { AiTwotoneLike } from 'react-icons/ai';
 
 const BusinessSummary = () => {
     return (
-        <div>
-            <p className='text-center text-2xl lg:text-4xl font-medium mb-2'>Doing Business for over a decade</p>
+        <div className='bg-gray-100'>
+            <p className='text-center text-2xl lg:text-4xl font-medium mb-2 pt-10'>Doing Business for over a decade</p>
             <p className='text-center lg:text-lg font-medium mb-6'>We provide what our client wants</p>
-            <div className='p-4 mb-20' style={{ backgroundImage: `url(${bgImg})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+            <div className='p-10 mb-10'>
                 <div className='flex items-center justify-center flex-wrap gap-10'>
                     <div className=' text-center flex flex-col items-center justify-center'>
                         <div className='mb-4'>

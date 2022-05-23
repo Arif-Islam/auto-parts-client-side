@@ -4,10 +4,10 @@ const PartsCard = ({ part, refetch }) => {
     const { name, image, orderQuantity, availableQuantity, description, price } = part;
 
     return (
-        <div className='relative w-[400px] shadow-lg'>
+        <div className='relative w-[400px] shadow-lg hover:shadow-xl'>
             <div className='flex flex-col items-center justify-center rounded border'>
                 <div>
-                    <img className='w-64 md:w-72 object-cover rounded pb-2 hover:opacity-80 hover:cursor-text' src={image} alt="" />
+                    <img className='w-64 hover:scale-90 transition ease-in-out md:w-72 object-cover rounded pb-2 hover:opacity-80 hover:cursor-text' src={image} alt="" />
                     <div className='absolute top-0 left-0'>
                         <div className='bg-[#0eadc9] text-white text-lg font-medium p-3 rounded w-20 text-center'>
                             <p>{price}</p>
