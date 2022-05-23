@@ -4,7 +4,6 @@ import Navbar from '../../../Shared/Navbar/Navbar';
 import Banner from '../Banner/Banner';
 import BusinessSummary from '../BusinessSummary/BusinessSummary';
 import Contact from '../Contact/Contact';
-import InfiniteText from '../InfiniteText/InfiniteText';
 import TextScroller from '../InfiniteText/TextScroller';
 import Parts from '../Parts/Parts';
 import Reviews from '../Reviews/Reviews';

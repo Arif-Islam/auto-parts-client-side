@@ -1,7 +1,12 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const PartsCard = ({ part, refetch }) => {
-    const { name, image, orderQuantity, availableQuantity, description, price } = part;
+    const {_id, name, image, orderQuantity, availableQuantity, description, price } = part;
+    const navigate = useNavigate();
+    const goToPurchase = id => {
+        navigate(`/order/${id}`);
+    }
 
     return (
         <div className='relative w-[415px] shadow-lg hover:shadow-xl'>
@@ -22,7 +27,7 @@ const PartsCard = ({ part, refetch }) => {
                     <p className='text-center font-medium mb-2'>Available in stock: {availableQuantity}</p>
                     <hr className='mb-4' />
                     <div className='text-center'>
-                        <button className='w-52 bg-black text-white p-3 font-medium tracking-wider rounded-sm hover:bg-[#0cabc7] transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none'>Order Now</button>
+                        <button onClick={() => goToPurchase(_id)} className='w-52 bg-black text-white p-3 font-medium tracking-wider rounded-sm hover:bg-[#0cabc7] transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none'>Order Now</button>
                     </div>
                 </div>
             </div>
