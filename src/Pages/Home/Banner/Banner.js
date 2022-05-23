@@ -28,7 +28,7 @@ const Banner = () => {
                     <img className='w-full h-[550px] md:h-[550px] object-cover' src={img5} />
                 </div>
             </Carousel>
-            {/* <div className='flex justify-center'>
+            <div className='flex justify-center'>
                 <div className="absolute bottom-28">
                     <button className='hover:cursor-text font-light text-xl text-white border-2 w-96 mx-auto border-white py-1 font-montserat'>
                        The World's Best Auto Parts
@@ -41,8 +41,8 @@ const Banner = () => {
                         See All Parts
                     </button>
                 </div>
-            </div> */}
-            <div className='flex justify-center items-center text-2xl lg:text-4xl font-semibold text-white'>
+            </div>
+            {/* <div className='flex justify-center items-center text-2xl lg:text-4xl font-semibold text-white'>
                 <div className="absolute bottom-1/2">
                     <Typewriter
                         options={{
@@ -52,7 +52,7 @@ const Banner = () => {
                         }}
                     />
                 </div>
-            </div>
+            </div> */}
         </div>
     );
 };
