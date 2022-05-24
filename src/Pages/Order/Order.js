@@ -78,7 +78,7 @@ const Order = () => {
             product: name,
             price: productPrice
         };
-        fetch(`http://localhost:5000/orders`, {
+        fetch(`https://pure-inlet-40571.herokuapp.com/orders`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

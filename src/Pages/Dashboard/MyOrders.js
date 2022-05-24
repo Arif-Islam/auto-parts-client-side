@@ -8,7 +8,7 @@ const MyOrders = () => {
     const [orders, setOrders] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/orders?email=${user?.email}`)
+        fetch(`https://pure-inlet-40571.herokuapp.com/orders?email=${user?.email}`)
             .then(res => res.json())
             .then(data => setOrders(data));
     }, [user]);
@@ -17,7 +17,7 @@ const MyOrders = () => {
     return (
         <div>
             <p className='text-center text-2xl lg:text-3xl font-medium my-10'>My Orders</p>
-            
+
             {
                 orders.length && <>
                     <div className=''>
