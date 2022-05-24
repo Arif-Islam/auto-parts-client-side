@@ -19,6 +19,7 @@ const Home = () => {
             <Reviews></Reviews>
             <Contact></Contact>
             <Footer></Footer>
+            {/* <button class="btn btn-secondary">Button</button> */}
         </div>
     );
 };

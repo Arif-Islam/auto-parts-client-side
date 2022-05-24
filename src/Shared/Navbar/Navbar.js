@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
+import './Navbar.css';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import logo from '../../images/auto parts logo.png';
 import { XIcon, MenuIcon } from '@heroicons/react/solid';
-import './Navbar.css';
 import { signOut } from 'firebase/auth';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
@@ -45,7 +45,7 @@ const Navbar = () => {
                             </div>
                             {
                                 user &&
-                                <div className='hover:text-[#0E9CF6]'>
+                                <div>
                                     <NavLink to='/dashboard'>Dashboard</NavLink>
                                 </div>
 
@@ -109,6 +109,12 @@ const Navbar = () => {
                     </div>
                     {
                         user ? <>
+                            <div>
+                                <NavLink to='/dashboard'>Dashboard</NavLink>
+                            </div>
+                            <div className=''>
+                                <label for="dashboard-sidebar" class=" lg:hidden">Open Drawer</label>
+                            </div>
                             <div onClick={doSignOut}>
                                 <NavLink to='/login'>Logout</NavLink>
                             </div>
@@ -122,9 +128,8 @@ const Navbar = () => {
                                 <NavLink to='/login'>Login</NavLink>
                             </div>
                     }
-
-
                 </div>
+
             </div>
 
         </div>

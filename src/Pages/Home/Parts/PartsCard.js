@@ -15,7 +15,7 @@ const PartsCard = ({ part, refetch }) => {
                     <img className='w-56 hover:scale-90 transition ease-in-out lg:w-72 object-cover rounded pb-2 hover:opacity-80 hover:cursor-text' src={image} alt="" />
                     <div className='absolute top-0 left-0'>
                         <div className='bg-[#0eadc9] text-white lg:text-lg font-medium p-3 rounded w-20 text-center'>
-                            <p>{price}</p>
+                            <p>${price}</p>
                         </div>
                     </div>
                 </div>
