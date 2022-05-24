@@ -5,11 +5,13 @@ import Navbar from '../../Shared/Navbar/Navbar';
 import Spinner from '../../Shared/Spinner';
 import { AiOutlineMinus } from 'react-icons/ai';
 import { AiOutlinePlus } from 'react-icons/ai';
+import { toast } from 'react-toastify';
 
 
 const Order = () => {
     const { id } = useParams();
     const [product, setProduct] = useState({});
+    const [canBuy, setCanBuy] = useState(true);
 
     useEffect(() => {
         fetch(`http://localhost:5000/parts/${id}`)
@@ -21,21 +23,43 @@ const Order = () => {
 
 
     const minimum = parseInt(orderQuantity);
+    const maximum = parseInt(availableQuantity);
 
-    const [num, setNum] = useState(minimum);
+    const [num, setNum] = useState(0);
+    useEffect(() => {
+        setNum(minimum);
+    }, [minimum]);
 
     console.log('minimum and num', minimum, num);
     const incNum = () => {
         setNum(num + 1);
+        if (num >= minimum-1 && num <= maximum-1) {
+            setCanBuy(true);
+        }
+        console.log('num minimum', num, minimum);
+        if (num > maximum - 1) {
+            toast.error(`You can only choose quantity of minimum ${minimum} and maximum ${parseInt(availableQuantity)}!`);
+            setCanBuy(false);
+        }
     };
     const decNum = () => {
         if (num > 0) {
             setNum(num - 1);
+            if (num >= minimum+1 && num <= maximum+1) {
+                setCanBuy(true);
+            }
+            console.log('num minimum', num, minimum);
+            if (num < minimum + 1) {
+                toast.error(`You can only choose quantity of minimum ${minimum} and maximum ${parseInt(availableQuantity)}!`);
+                setCanBuy(false);
+            }
         }
     }
     const handleChange = event => {
         setNum(event.target.value);
     }
+
+
 
 
     return (
@@ -64,7 +88,12 @@ const Order = () => {
                         <input className='w-80 border-2 rounded p-2 border-[#0eadc9]' type="email" placeholder='Email' />
                         <input className='w-80 border-2 rounded p-2 border-[#0eadc9]' type="text" placeholder='Address' />
                         <input className='w-80 border-2 rounded p-2 border-[#0eadc9]' type="text" placeholder='Phone Number' />
-                        <button className='w-36 bg-black text-white p-3 font-medium tracking-wider rounded hover:bg-[#0cabc7] transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none'>Order</button>
+                        {
+                            canBuy === false ? <button disabled className='w-36 bg-black text-gray-400 p-3 font-medium tracking-wider rounded '>Order</button>
+                                :
+                                <button className='w-36 bg-black text-white p-3 font-medium tracking-wider rounded hover:bg-[#0cabc7] transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none'>Order</button>
+                        }
+
                     </form>
                 </div>
             </div>

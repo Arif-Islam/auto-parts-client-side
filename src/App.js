@@ -1,4 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
 import Home from './Pages/Home/Home/Home';
 import Order from './Pages/Order/Order';
@@ -11,6 +13,7 @@ function App() {
         <Route path='/home' element={<Home></Home>}></Route>
         <Route path='/order/:id' element={<Order></Order>}></Route>
       </Routes>
+      <ToastContainer></ToastContainer>
     </div>
   );
 }
