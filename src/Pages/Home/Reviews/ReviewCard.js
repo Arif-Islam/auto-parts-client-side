@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const ReviewCard = ({ singleReview, refetch }) => {
     const { name, image, rating, review } = singleReview;
-    
+
 
     return (
         <div className='shadow-lg rounded p-6 bg-white hover:shadow-xl'>

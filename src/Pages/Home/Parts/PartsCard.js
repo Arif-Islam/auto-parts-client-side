@@ -9,7 +9,7 @@ const PartsCard = ({ part, refetch }) => {
     }
 
     return (
-        <div className='relative w-[415px] shadow-lg hover:shadow-xl'>
+        <div className='relative w-[350px] md:w-[415px] shadow-lg hover:shadow-xl'>
             <div className='flex flex-col items-center justify-center rounded border'>
                 <div>
                     <img className='w-64 hover:scale-90 transition ease-in-out md:w-72 object-cover rounded pb-2 hover:opacity-80 hover:cursor-text' src={image} alt="" />
