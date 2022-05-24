@@ -14,13 +14,12 @@ const Order = () => {
     const [canBuy, setCanBuy] = useState(true);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/parts/${id}`)
+        fetch(`https://pure-inlet-40571.herokuapp.com/parts/${id}`)
             .then(res => res.json())
             .then(data => setProduct(data))
     }, [id]);
 
     const { name, image, description, price, orderQuantity, availableQuantity } = product;
-
 
     const minimum = parseInt(orderQuantity);
     const maximum = parseInt(availableQuantity);
@@ -30,25 +29,31 @@ const Order = () => {
         setNum(minimum);
     }, [minimum]);
 
-    console.log('minimum and num', minimum, num);
+    // console.log('minimum and num', minimum, num);
     const incNum = () => {
-        setNum(num + 1);
-        if (num >= minimum-1 && num <= maximum-1) {
+        if(num <= maximum - 1){
+            setNum(num + 1);
+        }
+        if (num >= minimum - 1 && num <= maximum - 1) {
             setCanBuy(true);
         }
-        console.log('num minimum', num, minimum);
+        // console.log('num minimum', num, minimum);
         if (num > maximum - 1) {
             toast.error(`You can only choose quantity of minimum ${minimum} and maximum ${parseInt(availableQuantity)}!`);
             setCanBuy(false);
         }
     };
+
     const decNum = () => {
         if (num > 0) {
-            setNum(num - 1);
-            if (num >= minimum+1 && num <= maximum+1) {
+            if(num >= minimum + 1){
+                setNum(num - 1);
+            }
+            // setNum(num - 1);
+            if (num >= minimum + 1 && num <= maximum + 1) {
                 setCanBuy(true);
             }
-            console.log('num minimum', num, minimum);
+            // console.log('num minimum', num, minimum);
             if (num < minimum + 1) {
                 toast.error(`You can only choose quantity of minimum ${minimum} and maximum ${parseInt(availableQuantity)}!`);
                 setCanBuy(false);
