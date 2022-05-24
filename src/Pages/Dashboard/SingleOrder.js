@@ -1,20 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import DeleteModal from './DeleteModal';
 
 const SingleOrder = ({ order }) => {
     const { _id, name, product, email, price } = order;
     const navigate = useNavigate();
+    const [openModal, setOpenModal] = useState(false);
 
     const gotopayment = id => {
         navigate(`payment/${id}`);
     }
 
-    const deleteOrder = id => {
-        if(order.paid === true){
-            
-        }
+    // const deleteOrder = id => {
+    //     if(order.paid === true){
+    //         fetch(`http://localhost:5000/orders/${id}`, {
+    //             method: 'DELETE',
+    //             headers: {
 
-    };
+    //             }
+    //         })
+    //     }
+
+    // };
 
     return (
         <div className=' '>
@@ -28,10 +35,12 @@ const SingleOrder = ({ order }) => {
 
                     </div>
                     <div className='w-1/5 h-16 flex justify-center items-center border-r-[2px] border-b-[2px] border-gray-300'>
-                        <button onClick={() => deleteOrder(_id)} className='border-2 border-red-500 bg-red-500 text-sm text-white hover:text-red-500 hover:bg-white font-medium px-2 py-1 rounded-lg w-16 transition ease-in-out'>Delete</button>
+                        <label onClick={() => setOpenModal(true)} htmlFor="delete-modal" className="hover:cursor-pointer border-2 border-red-500 bg-red-500 text-sm text-white hover:text-red-500 hover:bg-white font-medium px-2 py-1 rounded-lg w-16 transition ease-in-out">Delete</label>
+                        {/* <button className='border-2 border-red-500 bg-red-500 text-sm text-white hover:text-red-500 hover:bg-white font-medium px-2 py-1 rounded-lg w-16 transition ease-in-out'>Delete</button> */}
                     </div>
                 </div>
             </div>
+            {openModal && <DeleteModal></DeleteModal>}
         </div>
     );
 };
