@@ -1,27 +1,32 @@
 import React, { useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import logo from '../../images/auto parts logo.png';
 import { XIcon, MenuIcon } from '@heroicons/react/solid';
 import './Navbar.css';
+import { signOut } from 'firebase/auth';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 
 const Navbar = () => {
     const [showNav, setShowNav] = useState(false);
-    // const [user] = useAuthState(auth);
-    // console.log(user);
-    // const navigate = useNavigate();
-    // const doSignOut = () => {
-    //     console.log('signed out', user);
-    //     signOut(auth);
-    //     navigate('/login');
-    // }
-
+    const [user] = useAuthState(auth);
+    console.log(user);
+    const navigate = useNavigate();
+    const doSignOut = () => {
+        console.log('signed out', user);
+        signOut(auth);
+        navigate('/login');
+    }
+    const gotohome = () => {
+        navigate('/');
+    }
     return (
         <div className='bg-[#181818] sticky top-0 z-20 py-6 text-white'>
             <div className='hidden lg:block w-11/12 mx-auto'>
                 <div className='flex items-center justify-between'>
                     <div className='w-1/3 mx-auto'>
                         <div className='flex flex-col justify-center items-center'>
-                            <div>
+                            <div onClick={gotohome} className="hover:cursor-pointer">
                                 {/* <Link to='/'> */}
                                 <img className='w-40' src={logo} alt="site logo" />
                                 {/* </Link> */}
@@ -39,13 +44,27 @@ const Navbar = () => {
                             <div className=''>
                                 <NavLink to='/about'>My Portfolio</NavLink>
                             </div>
+                            {
+                                user &&
+                                <div className='hover:text-[#0E9CF6]'>
+                                    <NavLink to='/dashboard'>Dashboard</NavLink>
+                                </div>
+
+                            }
                         </div>
                     </div>
                     <div className='w-1/3 mx-auto'>
                         <div className='flex space-x-6 justify-center items-center'>
-                            <div className=''>
-                                <NavLink to='/login'>Login</NavLink>
-                            </div>
+                            {
+                                user ? <div onClick={doSignOut}>
+                                    <NavLink to='/login'>Logout</NavLink>
+                                </div>
+                                    :
+                                    <div className=''>
+                                        <NavLink to='/login'>Login</NavLink>
+                                    </div>
+                            }
+
                         </div>
                     </div>
                     {/* <div className='w-1/3 mx-auto'>
@@ -77,9 +96,9 @@ const Navbar = () => {
             <div className='lg:hidden'>
                 <div className='flex justify-between items-center w-11/12 md:w-4/5 mx-auto'>
                     <div className='flex flex-col justify-end items-end'>
-                        <div>
+                        <div onClick={gotohome} className="hover:cursor-pointer">
                             {/* <Link to='/'> */}
-                                <img className='w-36' src={logo} alt="site logo" />
+                            <img className='w-36' src={logo} alt="site logo" />
                             {/* </Link> */}
                         </div>
                     </div>
