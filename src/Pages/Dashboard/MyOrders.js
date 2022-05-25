@@ -11,7 +11,7 @@ const MyOrders = () => {
         fetch(`https://pure-inlet-40571.herokuapp.com/orders?email=${user?.email}`)
             .then(res => res.json())
             .then(data => setOrders(data));
-    }, [user]);
+    }, [user, orders]);
 
 
     return (
