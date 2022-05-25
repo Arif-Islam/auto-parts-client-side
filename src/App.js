@@ -11,6 +11,7 @@ import Home from './Pages/Home/Home/Home';
 import Login from './Pages/Login/Login';
 import RequireAuth from './Pages/Login/RequireAuth';
 import SignUp from './Pages/Login/SignUp';
+import NotFound from './Pages/NotFound/NotFound';
 import Order from './Pages/Order/Order';
 import Navbar from './Shared/Navbar/Navbar';
 
@@ -35,6 +36,7 @@ function App() {
         </Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/signup' element={<SignUp></SignUp>}></Route>
+        <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <ToastContainer></ToastContainer>
     </div>
