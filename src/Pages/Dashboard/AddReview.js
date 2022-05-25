@@ -19,7 +19,7 @@ const AddReview = () => {
             rating,
             review
         }
-        fetch('https://pure-inlet-40571.herokuapp.com/reviews', {
+        fetch('http://localhost:5000/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -47,7 +47,7 @@ const AddReview = () => {
                     <option>1</option>
                 </select>
                 <textarea className='p-2 w-72 lg:w-96 h-24 rounded-lg border border-gray-500 mb-4' name="description" placeholder='Your Feedback'></textarea>
-                <button type='submit' className='w-36 bg-black text-white p-3 font-medium tracking-wider rounded-sm hover:bg-[#0cabc7] transition transform hover:-translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none'>Post</button>
+                <button type='submit' className='w-36 bg-[#0eadc9] rounded p-2 text-white hover:bg-[#078fa7] transition hover:ease-in-out tracking-wider font-medium'>Post</button>
             </form>
         </div>
     );

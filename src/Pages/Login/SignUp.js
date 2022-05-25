@@ -7,9 +7,9 @@ import { useForm } from "react-hook-form";
 import Spinner from '../../Shared/Spinner';
 import { toast } from 'react-toastify';
 // import useToken from '../../hooks/useToken';
+import addUser from './addUser';
 
 const SignUp = () => {
-    const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
     const [
         createUserWithEmailAndPassword,
         user,
@@ -20,23 +20,24 @@ const SignUp = () => {
     // const [sendEmailVerification, sending, verificationError] = useSendEmailVerification(auth);
 
     const { register, formState: { errors }, handleSubmit } = useForm();
-    // const [token] = useToken(user || gUser);
+    // const [token] = useToken(user);
 
     const navigate = useNavigate();
 
-    if (loading || gLoading || updating) {
+    if (loading || updating) {
         return <>
             <div className='mt-20'></div>
             <Spinner></Spinner>
         </>
     }
     let signInError;
-    if (error || gError || updateError) {
-        signInError = <p className='text-red-500 font-medium text-center'>{error?.message || gError?.message || updateError?.message}</p>
+    if (error || updateError) {
+        signInError = <p className='text-red-500 font-medium text-center'>{error?.message || updateError?.message}</p>
     }
-    if (user || gUser) {
-        // console.log(user || gUser);
+    if (user) {
         navigate('/home');
+        addUser(user)
+
     }
     const onSubmit = async data => {
         console.log(data);
@@ -103,11 +104,11 @@ const SignUp = () => {
 
                         {signInError}
                         <button className='w-72 md:w-80 bg-[#0eadc9] rounded p-2 text-white hover:bg-[#078fa7] transition hover:ease-in-out tracking-wider font-medium' type='submit'>Sign Up</button>
-                        
+
                         <div className='flex justify-center space-x-2 mt-3 text-sm mb-2'>
                             <p className='text-gray-800'>Already have an account?</p>
                             <div className='text-secondary font-medium'>
-                            <button onClick={gotologin} className='text-[#0eadc9] font-medium'>Login</button>
+                                <button onClick={gotologin} className='text-[#0eadc9] font-medium'>Login</button>
                             </div>
                         </div>
                     </form>

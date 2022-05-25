@@ -9,6 +9,7 @@ import { async } from '@firebase/util';
 // import useToken from '../../hooks/useToken';
 import Navbar from '../../Shared/Navbar/Navbar';
 import { BsGoogle } from "react-icons/bs";
+import addUser from './addUser';
 
 const Login = () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
@@ -65,6 +66,10 @@ const Login = () => {
 
     const gotosignup = () => {
         navigate('/signup');
+    }
+
+    if(user || gUser){
+        addUser(user || gUser);
     }
 
     return (

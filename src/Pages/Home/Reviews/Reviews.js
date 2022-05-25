@@ -4,7 +4,7 @@ import Spinner from '../../../Shared/Spinner';
 import ReviewCard from './ReviewCard';
 
 const Reviews = () => {
-    const { data: reviews, isLoading, refetch } = useQuery('reviews', () => fetch('https://pure-inlet-40571.herokuapp.com/reviews').then(res => res.json()));
+    const { data: reviews, isLoading, refetch } = useQuery('reviews', () => fetch('http://localhost:5000/reviews').then(res => res.json()));
 
     if (isLoading) {
         return <Spinner></Spinner>;

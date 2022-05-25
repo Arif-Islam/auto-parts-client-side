@@ -1,4 +1,3 @@
-import { async } from '@firebase/util';
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import React, { useEffect, useState } from 'react';
 
@@ -6,29 +5,32 @@ const CheckoutForm = ({ order }) => {
     const stripe = useStripe();
     const elements = useElements();
     const [cardError, setCardError] = useState('');
-    const [clientSecret, setClientSecret] = useState('');
     const [success, setSuccess] = useState('');
     const [transactionId, setTransactionId] = useState('');
     const [processing, setProcessing] = useState(false);
+    const [clientSecret, setClientSecret] = useState('');
 
     const { _id, price, name, email } = order;
+    // console.log(price);
+    const dollar = parseInt(price);
 
     useEffect(() => {
-        fetch(`https://pure-inlet-40571.herokuapp.com/create-payment-intent`, {
+        fetch('http://localhost:5000/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
                 // authorization: `Bearer ${localStorage.getItem('accessToken')}`
             },
-            body: JSON.stringify({ price })
+            body: JSON.stringify({ dollar })
         })
             .then(res => res.json())
             .then(data => {
+                console('client secret', data);
                 if (data?.clientSecret) {
                     setClientSecret(data.clientSecret);
                 }
             })
-    }, [price]);
+    }, [dollar]);
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -42,7 +44,7 @@ const CheckoutForm = ({ order }) => {
         const { error, paymentMethod } = await stripe.createPaymentMethod({
             type: 'card',
             card
-        })
+        });
         setCardError(error?.message || '');
         setSuccess('');
         setProcessing(true);
@@ -73,7 +75,7 @@ const CheckoutForm = ({ order }) => {
                 transactionId: paymentIntent.id
             }
             // store payment on database 
-            fetch(`https://pure-inlet-40571.herokuapp.com/orders/${_id}`, {
+            fetch(`http://localhost:5000/orders/${_id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json'
@@ -85,7 +87,7 @@ const CheckoutForm = ({ order }) => {
                 .then(res => res.json())
                 .then(data => {
                     setProcessing(false);
-                    // console.log(data);
+                    console.log(data);
                 })
         }
 
@@ -110,7 +112,7 @@ const CheckoutForm = ({ order }) => {
                         },
                     }}
                 />
-                <button className='btn btn-success btn-sm mt-4' type="submit" disabled={!stripe}>
+                <button className='btn btn-success btn-sm mt-4' type="submit" disabled={!stripe || !clientSecret || success}>
                     Pay
                 </button>
             </form>

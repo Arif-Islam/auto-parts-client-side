@@ -4,7 +4,7 @@ import Spinner from '../../../Shared/Spinner';
 import PartsCard from './PartsCard';
 
 const Parts = () => {
-    const { data: parts, isLoading, refetch } = useQuery('parts', () => fetch('https://pure-inlet-40571.herokuapp.com/parts').then(res => res.json()));
+    const { data: parts, isLoading, refetch } = useQuery('parts', () => fetch('http://localhost:5000/parts').then(res => res.json()));
 
     if (isLoading) {
         return <Spinner></Spinner>;

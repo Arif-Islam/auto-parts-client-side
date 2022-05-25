@@ -13,7 +13,7 @@ const SingleOrder = ({ order }) => {
 
     // const deleteOrder = id => {
     //     if(order.paid === true){
-    //         fetch(`https://pure-inlet-40571.herokuapp.com/orders/${id}`, {
+    //         fetch(`http://localhost:5000/orders/${id}`, {
     //             method: 'DELETE',
     //             headers: {
 

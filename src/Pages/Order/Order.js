@@ -17,7 +17,7 @@ const Order = () => {
     const [user] = useAuthState(auth);
 
     useEffect(() => {
-        fetch(`https://pure-inlet-40571.herokuapp.com/parts/${id}`)
+        fetch(`http://localhost:5000/parts/${id}`)
             .then(res => res.json())
             .then(data => setProduct(data))
     }, [id]);
@@ -78,7 +78,7 @@ const Order = () => {
             product: name,
             price: productPrice
         };
-        fetch(`https://pure-inlet-40571.herokuapp.com/orders`, {
+        fetch(`http://localhost:5000/orders`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
