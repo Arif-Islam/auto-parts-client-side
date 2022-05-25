@@ -33,6 +33,8 @@ const AddReview = () => {
                 }
                 console.log('review', data);
             })
+
+        event.target.reset();
     }
     return (
         <div>

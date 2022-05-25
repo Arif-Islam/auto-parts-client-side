@@ -1,16 +1,17 @@
 import React from 'react';
 import { useQuery } from 'react-query';
+import useProducts from '../../../hooks/useProducts';
 import Spinner from '../../../Shared/Spinner';
 import PartsCard from './PartsCard';
 
 const Parts = () => {
-    const { data: parts, isLoading, refetch } = useQuery('parts', () => fetch('http://localhost:5000/parts').then(res => res.json()));
+    const [parts] = useProducts();
 
-    if (isLoading) {
-        return <Spinner></Spinner>;
-    }
+    // if (isLoading) {
+    //     return <Spinner></Spinner>;
+    // }
 
-    refetch();
+    // refetch();
 
     return (
         <div>
@@ -21,10 +22,9 @@ const Parts = () => {
             <div className='w-11/12 md:w-4/5 mx-auto pb-16 mb-6'>
                 <div className='flex gap-10 flex-wrap items-center justify-center'>
                     {
-                        parts.map(part => <PartsCard
+                        [...parts].reverse().slice(0, 6).map(part => <PartsCard
                             key={part._id}
                             part={part}
-                            refetch={refetch}
                         ></PartsCard>)
                     }
                 </div>

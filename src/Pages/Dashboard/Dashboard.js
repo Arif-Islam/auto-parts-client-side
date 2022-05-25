@@ -22,6 +22,15 @@ const Dashboard = () => {
     const goToMakeAdmin = () => {
         navigate('makeadmin');
     }
+    const goToAddProduct = () => {
+        navigate('addproduct');
+    }
+    const goManageProducts = () => {
+        navigate('manageproducts');
+    }
+    const goManageOrders = () => {
+        navigate('manageallorders');
+    }
     return (
         <div>
             <Navbar></Navbar>
@@ -44,10 +53,11 @@ const Dashboard = () => {
                         }
                         {
                             admin && <>
-                                <li><button onClick={gotodashboard} className="font-semibold">Manage All Orders</button></li>
-                                <li><button onClick={gotomyprofile} className="font-semibold">Manage Products</button></li>
-                                <li><button onClick={gotoaddreview} className="font-semibold">Add Product</button></li>
+                                <li><button onClick={goManageOrders} className="font-semibold">Manage All Orders</button></li>
+                                <li><button onClick={goManageProducts} className="font-semibold">Manage Products</button></li>
+                                <li><button onClick={goToAddProduct} className="font-semibold">Add Product</button></li>
                                 <li><button onClick={goToMakeAdmin} className="font-semibold">Make Admin</button></li>
+                                <li><button onClick={gotomyprofile} className="font-semibold">My Profile</button></li>
                             </>
                         }
                     </ul>

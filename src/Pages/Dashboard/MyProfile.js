@@ -40,6 +40,8 @@ const MyProfile = () => {
                 }
                 // console.log('updated user data', data);
             })
+
+        // event.target.reset();
     }
 
     return (
