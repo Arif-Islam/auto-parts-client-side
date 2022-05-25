@@ -4,6 +4,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
 import AddReview from './Pages/Dashboard/AddReview';
 import Dashboard from './Pages/Dashboard/Dashboard';
+import MakeAdmin from './Pages/Dashboard/MakeAdmin';
 import MyOrders from './Pages/Dashboard/MyOrders';
 import MyProfile from './Pages/Dashboard/MyProfile';
 import Payment from './Pages/Dashboard/Payment';
@@ -31,7 +32,8 @@ function App() {
           <Route index element={<MyOrders></MyOrders>}></Route>
           <Route path='addreview' element={<AddReview></AddReview>}></Route>
           <Route path='payment/:id' element={<Payment></Payment>}></Route>          
-          <Route path='myprofile' element={<MyProfile></MyProfile>}></Route>          
+          <Route path='myprofile' element={<MyProfile></MyProfile>}></Route>        
+          <Route path='makeadmin' element={<MakeAdmin></MakeAdmin>}></Route>        
 
         </Route>
         <Route path='/login' element={<Login></Login>}></Route>
