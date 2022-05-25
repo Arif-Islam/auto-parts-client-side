@@ -2,22 +2,15 @@ import React from 'react';
 import { toast } from 'react-toastify';
 
 const DeleteModal = ({ order }) => {
-    const {_id, product, price } = order;
+    const { _id, product, price } = order;
     const deleteOrder = id => {
-        // const paid = order.hasOwnProperty('paid');
-        // console.log('paid', paid)
-        // console.log(order)
-        // if('paid' in order){
-        //     console.log('paid')
-        //     toast.error("Payment is done for this order. You can't delete this order!")
-        // }
-        fetch(`http://localhost:5000/orders/${id}`, {
+        fetch(`https://pure-inlet-40571.herokuapp.com/orders/${id}`, {
             method: 'DELETE'
         })
-        .then(res => res.json())
-        .then(data => {
-            toast.success('Your order deleted!');
-        })
+            .then(res => res.json())
+            .then(data => {
+                toast.success('Your order deleted!');
+            })
     }
 
     return (

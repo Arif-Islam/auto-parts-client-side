@@ -13,7 +13,7 @@ const SingleOrder = ({ order }) => {
 
     // const deleteOrder = id => {
     //     if(order.paid === true){
-    //         fetch(`http://localhost:5000/orders/${id}`, {
+    //         fetch(`https://pure-inlet-40571.herokuapp.com/orders/${id}`, {
     //             method: 'DELETE',
     //             headers: {
 
@@ -36,13 +36,12 @@ const SingleOrder = ({ order }) => {
                     </div>
                     <div className='w-1/5 h-16 flex justify-center items-center border-r-[2px] border-b-[2px] border-gray-300'>
                         {
-                            (price && order.paid) && <label  className="hover:cursor-pointer border-2 border-red-500 bg-red-500 text-sm text-white hover:text-red-500 hover:bg-white font-medium px-2 py-1 rounded-lg w-16 transition ease-in-out">Delete</label>
+                            (price && order.paid) && <label className="hover:cursor-pointer border-2 border-red-500 bg-red-500 text-sm text-white hover:text-red-500 hover:bg-white font-medium px-2 py-1 rounded-lg w-16 transition ease-in-out">Delete</label>
                         }
                         {
                             (price && !order.paid) && <label onClick={() => setOpenModal(true)} htmlFor="delete-modal" className="hover:cursor-pointer border-2 border-red-500 bg-red-500 text-sm text-white hover:text-red-500 hover:bg-white font-medium px-2 py-1 rounded-lg w-16 transition ease-in-out">Delete</label>
                         }
 
-                        {/* <button className='border-2 border-red-500 bg-red-500 text-sm text-white hover:text-red-500 hover:bg-white font-medium px-2 py-1 rounded-lg w-16 transition ease-in-out'>Delete</button> */}
                     </div>
                 </div>
             </div>

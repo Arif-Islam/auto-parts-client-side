@@ -20,7 +20,7 @@ const Reviews = () => {
                 <div className='w-11/12 md:w-4/5 mx-auto '>
                     <div className='flex gap-10 flex-wrap items-center justify-center'>
                         {
-                            reviews.map(singleReview => <ReviewCard
+                            [...reviews].reverse().slice(0, 4).map(singleReview => <ReviewCard
                                 key={singleReview._id}
                                 singleReview={singleReview}
                                 refetch={refetch}

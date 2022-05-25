@@ -25,7 +25,7 @@ const Dashboard = () => {
                 </div>
                 <div class="drawer-side">
                     <label for="dashboard-sidebar" class="drawer-overlay"></label>
-                    <ul class="menu p-4 overflow-y-auto w-64 bg-gray-200 text-base-content ">
+                    <ul class="menu p-4 overflow-y-auto w-64 bg-gray-200 text-base-content pt-8">
                         <li><button onClick={gotodashboard} className="font-semibold">My Orders</button></li>
                         <li><button onClick={gotoaddreview} className="font-semibold">Add Review</button></li>
                         <li><button onClick={gotomyprofile} className="font-semibold">My Profile</button></li>
