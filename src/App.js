@@ -13,6 +13,7 @@ import MyProfile from './Pages/Dashboard/MyProfile';
 import Payment from './Pages/Dashboard/Payment';
 import Home from './Pages/Home/Home/Home';
 import Login from './Pages/Login/Login';
+import RequireAdmin from './Pages/Login/RequireAdmin';
 import RequireAuth from './Pages/Login/RequireAuth';
 import SignUp from './Pages/Login/SignUp';
 import NotFound from './Pages/NotFound/NotFound';
@@ -32,14 +33,22 @@ function App() {
         <Route path='/dashboard' element={<RequireAuth>
           <Dashboard></Dashboard>
         </RequireAuth>}>
-          <Route index element={<MyOrders></MyOrders>}></Route>
+          <Route index element={<MyProfile></MyProfile>}></Route>
+          <Route path='myorders' element={<MyOrders></MyOrders>}></Route>
           <Route path='addreview' element={<AddReview></AddReview>}></Route>
-          <Route path='payment/:id' element={<Payment></Payment>}></Route>          
-          <Route path='myprofile' element={<MyProfile></MyProfile>}></Route>        
-          <Route path='makeadmin' element={<MakeAdmin></MakeAdmin>}></Route>        
-          <Route path='addproduct' element={<AddProduct></AddProduct>}></Route>        
-          <Route path='manageproducts' element={<ManageProducts></ManageProducts>}></Route>        
-          <Route path='manageallorders' element={<ManageAllOrders></ManageAllOrders>}></Route>     
+          <Route path='payment/:id' element={<Payment></Payment>}></Route>
+          <Route path='makeadmin' element={<RequireAdmin>
+            <MakeAdmin></MakeAdmin>
+          </RequireAdmin>}></Route>
+          <Route path='addproduct' element={<RequireAdmin>
+            <AddProduct></AddProduct>
+          </RequireAdmin>}></Route>
+          <Route path='manageproducts' element={<RequireAdmin>
+            <ManageProducts></ManageProducts>
+          </RequireAdmin>}></Route>
+          <Route path='manageallorders' element={<RequireAdmin>
+            <ManageAllOrders></ManageAllOrders>
+          </RequireAdmin>}></Route>
 
         </Route>
         <Route path='/login' element={<Login></Login>}></Route>

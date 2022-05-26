@@ -8,12 +8,12 @@ const SingleOrder = ({ order }) => {
     const [openModal, setOpenModal] = useState(false);
 
     const gotopayment = id => {
-        navigate(`payment/${id}`);
+        navigate(`/dashboard/payment/${id}`);
     }
 
     // const deleteOrder = id => {
     //     if(order.paid === true){
-    //         fetch(`http://localhost:5000/orders/${id}`, {
+    //         fetch(`https://pure-inlet-40571.herokuapp.com/orders/${id}`, {
     //             method: 'DELETE',
     //             headers: {
 

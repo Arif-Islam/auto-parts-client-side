@@ -6,12 +6,13 @@ import SingleOrder from './SingleOrder';
 const MyOrders = () => {
     const [user] = useAuthState(auth);
     const [orders, setOrders] = useState([]);
+    const email = user.email;
 
     useEffect(() => {
-        fetch(`http://localhost:5000/orders?email=${user?.email}`)
+        fetch(`https://pure-inlet-40571.herokuapp.com/orders?email=${email}`)
             .then(res => res.json())
             .then(data => setOrders(data));
-    }, [user, orders]);
+    }, [email, orders]);
 
 
     return (

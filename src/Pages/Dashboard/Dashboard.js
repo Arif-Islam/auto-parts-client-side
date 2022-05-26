@@ -10,14 +10,15 @@ const Dashboard = () => {
     const [admin] = useAdmin(user);
 
     const navigate = useNavigate();
-    const gotodashboard = () => {
-        navigate('/dashboard');
+
+    const goToMyOrders = () => {
+        navigate('myorders');
     }
     const gotoaddreview = () => {
         navigate('addreview');
     }
     const gotomyprofile = () => {
-        navigate('myprofile');
+        navigate('/dashboard');
     }
     const goToMakeAdmin = () => {
         navigate('makeadmin');
@@ -46,18 +47,18 @@ const Dashboard = () => {
                     <ul class="menu p-4 overflow-y-auto w-64 bg-gray-200 text-base-content pt-8">
                         {
                             !admin && <>
-                                <li><button onClick={gotodashboard} className="font-semibold">My Orders</button></li>
-                                <li><button onClick={gotoaddreview} className="font-semibold">Add Review</button></li>
                                 <li><button onClick={gotomyprofile} className="font-semibold">My Profile</button></li>
+                                <li><button onClick={goToMyOrders} className="font-semibold">My Orders</button></li>
+                                <li><button onClick={gotoaddreview} className="font-semibold">Add Review</button></li>
                             </>
                         }
                         {
                             admin && <>
+                                <li><button onClick={gotomyprofile} className="font-semibold">My Profile</button></li>
                                 <li><button onClick={goManageOrders} className="font-semibold">Manage All Orders</button></li>
                                 <li><button onClick={goManageProducts} className="font-semibold">Manage Products</button></li>
                                 <li><button onClick={goToAddProduct} className="font-semibold">Add Product</button></li>
                                 <li><button onClick={goToMakeAdmin} className="font-semibold">Make Admin</button></li>
-                                <li><button onClick={gotomyprofile} className="font-semibold">My Profile</button></li>
                             </>
                         }
                     </ul>
