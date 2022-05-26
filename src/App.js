@@ -17,6 +17,7 @@ import Login from './Pages/Login/Login';
 import RequireAdmin from './Pages/Login/RequireAdmin';
 import RequireAuth from './Pages/Login/RequireAuth';
 import SignUp from './Pages/Login/SignUp';
+import MyPortfolio from './Pages/MyPortfolio';
 import NotFound from './Pages/NotFound/NotFound';
 import Order from './Pages/Order/Order';
 import Navbar from './Shared/Navbar/Navbar';
@@ -24,11 +25,12 @@ import Navbar from './Shared/Navbar/Navbar';
 function App() {
   return (
     <div className="font">
-
+      <Navbar></Navbar>
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
+        <Route path='/myportfolio' element={<MyPortfolio></MyPortfolio>}></Route>
         <Route path='/order/:id' element={<RequireAuth>
           <Order></Order>
         </RequireAuth>}></Route>

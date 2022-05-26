@@ -5,7 +5,7 @@ import Navbar from '../Shared/Navbar/Navbar';
 const Blogs = () => {
     return (
         <div>
-            <Navbar></Navbar>
+            {/* <Navbar></Navbar> */}
             <div className='bg-gray-200 py-16'>
                 <div className='w-11/12 md:w-4/5 lg:w-3/4 2xl:w-3/5 mx-auto'>
                     {/* <p className='text-4xl mb-6 font-semibold'>Posts</p> */}
@@ -23,7 +23,7 @@ const Blogs = () => {
                     </div>
                     <div className='bg-white p-6 rounded mb-4'>
                         <h2 className='text-xl lg:text-2xl font-semibold mb-2'>You have an array of products. Each product has a name, price, description, etc. How will you implement a search to find products by name?</h2>
-                        <p className='font-medium'>The array of the products must be containing objects of product. To find the products only by name, I'll use filter method. Inside filter method, I'll query only by name and if name is matched, then it will be stored in the resultant array. The main code for this problem is: " const result = products.filter(product => product.name == 'someName'); ". The output will be stored in the result array.</p>
+                        <p className='font-medium'>The array of the products must be containing objects of product. To find the products only by name, I'll use filter method. Inside filter method, I'll query only by name and if name is matched, then it will be stored in the resultant array. The main code for this problem is: " const result = products.filter(product =&gt; product.name == 'someName'); ". The output will be stored in the result array.</p>
                     </div>
                     <div className='bg-white p-6 rounded mb-4'>
                         <h2 className='text-xl lg:text-2xl font-semibold mb-2'>What is a unit test? Why should we write unit tests?</h2>

@@ -5,7 +5,7 @@ import Navbar from '../../Shared/Navbar/Navbar';
 const NotFound = () => {
     return (
         <div>
-            <Navbar></Navbar>
+            {/* <Navbar></Navbar> */}
             <div className='flex justify-center mt-10 lg:mt-20'>
                 <img className='' src={error404} alt="" />
             </div>

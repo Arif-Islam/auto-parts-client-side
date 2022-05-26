@@ -67,13 +67,10 @@ const Login = () => {
         navigate('/signup');
     }
 
-    // if(user || gUser){
-    //     useUser(user || gUser);
-    // }
 
     return (
         <div>
-            <Navbar></Navbar>
+            {/* <Navbar></Navbar> */}
             <div className='w-[350px] md:w-[400px] mx-auto mt-20 shadow-md border p-5 rounded-lg'>
                 <div className='flex flex-col items-center justify-center'>
                     <h1 className='text-3xl mb-10 text-gray-800 font-medium'>Login</h1>
