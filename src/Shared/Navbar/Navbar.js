@@ -42,7 +42,7 @@ const Navbar = () => {
                                 <NavLink to='/blogs'>Blogs</NavLink>
                             </div>
                             <div className=''>
-                                <NavLink to='/about'>My Portfolio</NavLink>
+                                <NavLink to='/myportfolio'>My Portfolio</NavLink>
                             </div>
                             {
                                 user &&
@@ -106,7 +106,7 @@ const Navbar = () => {
                         <NavLink to='/blogs'>Blogs</NavLink>
                     </div>
                     <div className=''>
-                        <NavLink to='/about'>My Portfolio</NavLink>
+                        <NavLink to='/myportfolio'>My Portfolio</NavLink>
                     </div>
                     {
                         user ? <>
