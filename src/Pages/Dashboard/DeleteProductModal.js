@@ -5,7 +5,7 @@ const DeleteProductModal = ({ part }) => {
     const { _id, name, price } = part;
 
     const deleteProduct = id => {
-        fetch(`https://pure-inlet-40571.herokuapp.com/parts/${id}`, {
+        fetch(`http://localhost:5000/parts/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

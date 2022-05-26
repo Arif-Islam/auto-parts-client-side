@@ -11,11 +11,12 @@ import { AiOutlineUser } from 'react-icons/ai';
 const Navbar = () => {
     const [showNav, setShowNav] = useState(false);
     const [user] = useAuthState(auth);
-    console.log(user);
+    // console.log(user);
     const navigate = useNavigate();
     const doSignOut = () => {
-        console.log('signed out', user);
+        // console.log('signed out', user);
         signOut(auth);
+        localStorage.removeItem('accessToken');
         navigate('/login');
     }
     const gotohome = () => {

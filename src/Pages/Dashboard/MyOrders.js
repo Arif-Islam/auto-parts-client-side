@@ -2,15 +2,30 @@ import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import SingleOrder from './SingleOrder';
+import { signOut } from 'firebase/auth';
+import { useNavigate } from 'react-router-dom';
 
 const MyOrders = () => {
     const [user] = useAuthState(auth);
     const [orders, setOrders] = useState([]);
     const email = user.email;
+    const navigate = useNavigate();
 
     useEffect(() => {
-        fetch(`https://pure-inlet-40571.herokuapp.com/orders?email=${email}`)
-            .then(res => res.json())
+        fetch(`http://localhost:5000/my_orders?email=${email}`, {
+            method: 'GET',
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('accessToken')}`
+            }
+        })
+            .then(res => {
+                if (res.status === 401 || res.status === 403) {
+                    signOut(auth);
+                    localStorage.removeItem('accessToken');
+                    navigate('/');
+                }
+                return res.json()
+            })
             .then(data => setOrders(data));
     }, [email, orders]);
 

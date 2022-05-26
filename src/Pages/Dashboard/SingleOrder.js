@@ -13,7 +13,7 @@ const SingleOrder = ({ order }) => {
 
     // const deleteOrder = id => {
     //     if(order.paid === true){
-    //         fetch(`https://pure-inlet-40571.herokuapp.com/orders/${id}`, {
+    //         fetch(`http://localhost:5000/orders/${id}`, {
     //             method: 'DELETE',
     //             headers: {
 
@@ -27,7 +27,7 @@ const SingleOrder = ({ order }) => {
         <div className=' '>
             <div className='w-full lg:w-4/5 2xl:w-3/4 mx-auto  '>
                 <div className='flex bg-white justify-center items-center hover:bg-gray-100 hover:cursor-text'>
-                    <p className='w-2/5 h-16 flex items-center justify-center font-medium text-sm lg:text-xl text-[#0eadc9] text-center p-2 border-x-[2px] border-b-[2px] border-gray-300'>{product}</p>
+                    <p className='w-2/5 h-16 flex items-center justify-center font-medium text-sm lg:text-xl text-center p-2 border-x-[2px] border-b-[2px] border-gray-300'>{product}</p>
                     <p className='w-1/5 h-16 flex items-center justify-center font-semibold text-sm lg:text-base text-center p-2 border-r-[2px] border-b-[2px] border-gray-300'>${price}</p>
                     <div className='w-1/5 h-16 flex justify-center items-center border-b-[2px] border-r-[2px] border-gray-300'>
                         {(price && order.paid) && <p className='overflow-scroll 2xl:overflow-hidden text-orange-500 flex items-center justify-center font-semibold text-sm'>{order.transactionId}</p>}

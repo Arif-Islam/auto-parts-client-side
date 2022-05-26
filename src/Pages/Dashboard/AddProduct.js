@@ -17,7 +17,7 @@ const AddProduct = () => {
             availableQuantity: event.target.availableQuantity.value,
             description: event.target.description.value
         };
-        fetch('https://pure-inlet-40571.herokuapp.com/parts', {
+        fetch('http://localhost:5000/parts', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -6,8 +6,7 @@ import auth from '../../firebase.init';
 import { useForm } from "react-hook-form";
 import Spinner from '../../Shared/Spinner';
 import { toast } from 'react-toastify';
-// import useToken from '../../hooks/useToken';
-import addUser from './addUser';
+import useToken from '../../hooks/useToken';
 
 const SignUp = () => {
     const [
@@ -21,6 +20,7 @@ const SignUp = () => {
 
     const { register, formState: { errors }, handleSubmit } = useForm();
     // const [token] = useToken(user);
+    const [token] = useToken(user);
 
     const navigate = useNavigate();
 
@@ -36,8 +36,6 @@ const SignUp = () => {
     }
     if (user) {
         navigate('/home');
-        addUser(user)
-
     }
     const onSubmit = async data => {
         console.log(data);

@@ -19,7 +19,7 @@ const AddReview = () => {
             rating,
             review
         }
-        fetch('https://pure-inlet-40571.herokuapp.com/reviews', {
+        fetch('http://localhost:5000/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

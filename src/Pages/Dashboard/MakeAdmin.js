@@ -4,7 +4,7 @@ import Spinner from '../../Shared/Spinner';
 import UserRow from './UserRow';
 
 const MakeAdmin = () => {
-    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('https://pure-inlet-40571.herokuapp.com/users/').then(res => res.json()));
+    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('http://localhost:5000/users/').then(res => res.json()));
     if (isLoading) {
         return <>
             <div className='mt-10'></div>

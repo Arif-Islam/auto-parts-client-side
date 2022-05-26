@@ -6,10 +6,9 @@ import { useForm } from "react-hook-form";
 import Spinner from '../../Shared/Spinner';
 import { toast } from 'react-toastify';
 import { async } from '@firebase/util';
-// import useToken from '../../hooks/useToken';
 import Navbar from '../../Shared/Navbar/Navbar';
 import { BsGoogle } from "react-icons/bs";
-import addUser from './addUser';
+import useToken from '../../hooks/useToken';
 
 const Login = () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
@@ -25,14 +24,14 @@ const Login = () => {
     let from = location.state?.from?.pathname || "/";
 
     const { register, getValues, formState: { errors }, handleSubmit } = useForm();
-    // const [token] = useToken(user || gUser);
+    const [token] = useToken(user || gUser);
 
     useEffect(() => {
-        if (user || gUser) {
+        if (token) {
             // console.log(user || gUser);
             navigate(from, { replace: true });
         }
-    }, [user, gUser, from, navigate]);
+    }, [token, from, navigate]);
 
     if (loading || gLoading || sending) {
         return <>
@@ -68,9 +67,9 @@ const Login = () => {
         navigate('/signup');
     }
 
-    if(user || gUser){
-        addUser(user || gUser);
-    }
+    // if(user || gUser){
+    //     useUser(user || gUser);
+    // }
 
     return (
         <div>

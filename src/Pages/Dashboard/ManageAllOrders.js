@@ -6,7 +6,7 @@ import SingleOrder from './SingleOrder';
 
 const ManageAllOrders = () => {
 
-    const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch('https://pure-inlet-40571.herokuapp.com/orders/').then(res => res.json()));
+    const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch('http://localhost:5000/orders/').then(res => res.json()));
 
     if (isLoading) {
         return <>

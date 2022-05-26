@@ -5,13 +5,18 @@ const UserRow = ({ user, refetch }) => {
     const { email } = user;
 
     const makeAdmin = () => {
-        fetch(`https://pure-inlet-40571.herokuapp.com/users/admin/${email}`, {
-            method: 'PUT'
-            // headers: {
-            //     authorization: `Bearer ${localStorage.getItem('accessToken')}`
-            // }
+        fetch(`http://localhost:5000/users/admin/${email}`, {
+            method: 'PUT',
+            headers: {
+                authorization: `Bearer ${localStorage.getItem('accessToken')}`
+            }
         })
-            .then(res => res.json())
+            .then(res => {
+                if (res.status === 403) {
+                    toast.error('failed to make an admin');
+                }
+                return res.json();
+            })
             .then(data => {
                 if (data.modifiedCount) {
                     refetch();
