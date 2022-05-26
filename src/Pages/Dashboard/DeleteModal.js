@@ -9,7 +9,7 @@ const DeleteModal = ({ order }) => {
         })
             .then(res => res.json())
             .then(data => {
-                toast.success('Your order is deleted!');
+                toast.success('This order is deleted!');
             })
     }
 

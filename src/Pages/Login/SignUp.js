@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Navbar from '../../Shared/Navbar/Navbar';
-import { Link, useNavigate } from 'react-router-dom';
-import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { useForm } from "react-hook-form";
 import Spinner from '../../Shared/Spinner';
@@ -19,10 +19,8 @@ const SignUp = () => {
     // const [sendEmailVerification, sending, verificationError] = useSendEmailVerification(auth);
 
     const { register, formState: { errors }, handleSubmit } = useForm();
-    // const [token] = useToken(user);
-    const [token] = useToken(user);
-
     const navigate = useNavigate();
+
 
     if (loading || updating) {
         return <>

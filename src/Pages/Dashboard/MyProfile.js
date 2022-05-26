@@ -36,7 +36,7 @@ const MyProfile = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.modifiedCount) {
-                    toast.success("Your profile is updated!");
+                    toast.success("Your profile is updated! Please Referesh to See Changes.");
                 }
                 // console.log('updated user data', data);
             })

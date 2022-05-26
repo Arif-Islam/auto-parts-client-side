@@ -97,7 +97,7 @@ const Order = () => {
 
     return (
         <div>
-            <Navbar></Navbar>
+            {/* <Navbar></Navbar> */}
             <div className='flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-28 mb-10'>
                 <div className='flex flex-col items-start justify-center mt-10'>
                     <img className='w-64' src={image} alt="" />
