@@ -12,7 +12,7 @@ const MyOrders = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        fetch(`http://localhost:5000/my_orders?email=${email}`, {
+        fetch(`https://pure-inlet-40571.herokuapp.com/my_orders?email=${email}`, {
             method: 'GET',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`

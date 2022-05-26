@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 const DeleteModal = ({ order }) => {
     const { _id, product, price } = order;
     const deleteOrder = id => {
-        fetch(`http://localhost:5000/orders/${id}`, {
+        fetch(`https://pure-inlet-40571.herokuapp.com/orders/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())
