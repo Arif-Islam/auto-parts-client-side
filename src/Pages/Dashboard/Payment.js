@@ -1,22 +1,26 @@
 import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import { useQuery } from 'react-query';
 import { useParams } from 'react-router-dom';
+import Spinner from '../../Shared/Spinner';
 import CheckoutForm from './CheckoutForm';
-
 
 const stripePromise = loadStripe('pk_test_51L1ak9FP9wwITSeP2TBKTWHwoTVQaTCu4aKTn7XVqgjbzh6NXaujccBFcOa9n6BOLbZj1eJeboJY5ONgEha2Wdu200gQY3RgUi');
 
 const Payment = () => {
     const { id } = useParams();
-    const [order, setOrder] = useState({});
+    const url = `https://pure-inlet-40571.herokuapp.com/orders/${id}`;
+    const { data: order, isLoading } = useQuery(['order', id], () => fetch(url, {
+        method: 'GET',
+        headers: {
+            'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+        }
+    }).then(res => res.json()));
 
-    useEffect(() => {
-        fetch(`https://pure-inlet-40571.herokuapp.com/orders/${id}`)
-            .then(res => res.json())
-            .then(data => setOrder(data));
-    }, [id]);
-    // console.log('single order', order)
+    if (isLoading) {
+        return <Spinner></Spinner>;
+    }
 
     return (
         <div className='flex flex-col justify-center items-center'>
