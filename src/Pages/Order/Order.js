@@ -17,7 +17,7 @@ const Order = () => {
     const [user] = useAuthState(auth);
 
     useEffect(() => {
-        fetch(`https://pure-inlet-40571.herokuapp.com/parts/${id}`)
+        fetch(`https://auto-parts-server-z285.onrender.com/parts/${id}`)
             .then(res => res.json())
             .then(data => setProduct(data))
     }, [id]);
@@ -78,7 +78,7 @@ const Order = () => {
             product: name,
             price: productPrice
         };
-        fetch(`https://pure-inlet-40571.herokuapp.com/orders`, {
+        fetch(`https://auto-parts-server-z285.onrender.com/orders`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

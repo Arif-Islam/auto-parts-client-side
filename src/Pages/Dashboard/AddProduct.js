@@ -17,7 +17,7 @@ const AddProduct = () => {
             availableQuantity: event.target.availableQuantity.value,
             description: event.target.description.value
         };
-        fetch('https://pure-inlet-40571.herokuapp.com/parts', {
+        fetch('https://auto-parts-server-z285.onrender.com/parts', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

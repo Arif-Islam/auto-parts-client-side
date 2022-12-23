@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './Navbar.css';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import logo from '../../images/auto parts logo.png';
-import { XIcon, MenuIcon } from '@heroicons/react/solid';
+import { XIcon, MenuIcon } from '@heroicons/react/solid';   
 import { signOut } from 'firebase/auth';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';

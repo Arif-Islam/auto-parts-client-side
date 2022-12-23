@@ -11,7 +11,7 @@ const AdminSingleOrder = ({ order }) => {
 
     const makeShipped = id => {
         const deliver = { shipped: true };
-        fetch(`https://pure-inlet-40571.herokuapp.com/orders/${id}`, {
+        fetch(`https://auto-parts-server-z285.onrender.com/orders/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

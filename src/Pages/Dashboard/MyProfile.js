@@ -8,7 +8,7 @@ const MyProfile = () => {
     const email = user?.email;
     const [info, setInfo] = useState({});
     useEffect(() => {
-        fetch(`https://pure-inlet-40571.herokuapp.com/user/${email}`)
+        fetch(`https://auto-parts-server-z285.onrender.com/user/${email}`)
             .then(res => res.json())
             .then(data => {
                 console.log('user data', data);
@@ -26,7 +26,7 @@ const MyProfile = () => {
             phone: event.target.phone.value,
             linkedin: event.target.linkedin.value
         }
-        fetch(`https://pure-inlet-40571.herokuapp.com/user/${email}`, {
+        fetch(`https://auto-parts-server-z285.onrender.com/user/${email}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'

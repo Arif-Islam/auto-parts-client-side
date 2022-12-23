@@ -10,7 +10,7 @@ const stripePromise = loadStripe('pk_test_51L1ak9FP9wwITSeP2TBKTWHwoTVQaTCu4aKTn
 
 const Payment = () => {
     const { id } = useParams();
-    const url = `https://pure-inlet-40571.herokuapp.com/orders/${id}`;
+    const url = `https://auto-parts-server-z285.onrender.com/orders/${id}`;
     const { data: order, isLoading } = useQuery(['order', id], () => fetch(url, {
         method: 'GET',
         headers: {

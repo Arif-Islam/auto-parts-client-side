@@ -4,7 +4,7 @@ import Spinner from '../../Shared/Spinner';
 import UserRow from './UserRow';
 
 const MakeAdmin = () => {
-    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('https://pure-inlet-40571.herokuapp.com/users/', {
+    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('https://auto-parts-server-z285.onrender.com/users/', {
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`

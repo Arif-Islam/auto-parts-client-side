@@ -19,7 +19,7 @@ const AddReview = () => {
             rating,
             review
         }
-        fetch('https://pure-inlet-40571.herokuapp.com/reviews', {
+        fetch('https://auto-parts-server-z285.onrender.com/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

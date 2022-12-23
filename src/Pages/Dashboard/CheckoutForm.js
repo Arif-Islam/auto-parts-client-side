@@ -14,7 +14,7 @@ const CheckoutForm = ({ order }) => {
     const { _id, price, name, email } = order;
 
     useEffect(() => {
-        fetch('https://pure-inlet-40571.herokuapp.com/create-payment-intent', {
+        fetch('https://auto-parts-server-z285.onrender.com/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -78,7 +78,7 @@ const CheckoutForm = ({ order }) => {
                 order: _id,
                 transactionId: paymentIntent.id
             }
-            fetch(`https://pure-inlet-40571.herokuapp.com/orders/${_id}`, {
+            fetch(`https://auto-parts-server-z285.onrender.com/orders/${_id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json',
