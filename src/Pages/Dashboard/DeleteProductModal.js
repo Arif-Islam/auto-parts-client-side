@@ -5,7 +5,7 @@ const DeleteProductModal = ({ part }) => {
     const { _id, name, price } = part;
 
     const deleteProduct = id => {
-        fetch(`https://auto-parts-backend.onrender.com/parts/${id}`, {
+        fetch(`https://auto-parts-backend.vercel.app/parts/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

@@ -8,7 +8,7 @@ const MyProfile = () => {
     const email = user?.email;
     const [info, setInfo] = useState({});
     useEffect(() => {
-        fetch(`https://auto-parts-backend.onrender.com/user/${email}`)
+        fetch(`https://auto-parts-backend.vercel.app/user/${email}`)
             .then(res => res.json())
             .then(data => {
                 console.log('user data', data);
@@ -26,7 +26,7 @@ const MyProfile = () => {
             phone: event.target.phone.value,
             linkedin: event.target.linkedin.value
         }
-        fetch(`https://auto-parts-backend.onrender.com/user/${email}`, {
+        fetch(`https://auto-parts-backend.vercel.app/user/${email}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'

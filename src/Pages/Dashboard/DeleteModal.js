@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 const DeleteModal = ({ order }) => {
     const { _id, product, price } = order;
     const deleteOrder = id => {
-        fetch(`https://auto-parts-backend.onrender.com/orders/${id}`, {
+        fetch(`https://auto-parts-backend.vercel.app/orders/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())
