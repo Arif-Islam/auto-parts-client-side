@@ -5,7 +5,7 @@ import Spinner from '../../../Shared/Spinner';
 import PartsCard from './PartsCard';
 
 const Parts = () => {
-    const [parts] = useProducts();
+    const [parts, isLoading] = useProducts();
 
     // if (isLoading) {
     //     return <Spinner></Spinner>;
@@ -22,7 +22,7 @@ const Parts = () => {
             <div className='w-11/12 md:w-4/5 mx-auto pb-16 mb-6'>
                 <div className='flex gap-10 flex-wrap items-center justify-center'>
                     {
-                        [...parts].reverse().slice(0, 6).map(part => <PartsCard
+                        isLoading ? <Spinner></Spinner> : [...parts].reverse().slice(0, 6).map(part => <PartsCard
                             key={part._id}
                             part={part}
                         ></PartsCard>)

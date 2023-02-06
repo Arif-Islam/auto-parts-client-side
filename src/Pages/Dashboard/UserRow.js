@@ -5,7 +5,7 @@ const UserRow = ({ user, refetch }) => {
     const { email } = user;
 
     const makeAdmin = () => {
-        fetch(`https://auto-parts-server-z285.onrender.com/users/admin/${email}`, {
+        fetch(`https://auto-parts-backend.onrender.com/users/admin/${email}`, {
             method: 'PUT',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`

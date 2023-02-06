@@ -12,7 +12,7 @@ const MyOrders = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        fetch(`https://auto-parts-server-z285.onrender.com/my_orders?email=${email}`, {
+        fetch(`https://auto-parts-backend.onrender.com/my_orders?email=${email}`, {
             method: 'GET',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
