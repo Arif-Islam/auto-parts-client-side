@@ -17,7 +17,7 @@ const AddProduct = () => {
             availableQuantity: event.target.availableQuantity.value,
             description: event.target.description.value
         };
-        fetch('https://auto-parts-backend.vercel.app/parts', {
+        fetch('https://auto-parts-backend.onrender.com/parts', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

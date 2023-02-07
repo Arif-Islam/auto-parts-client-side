@@ -4,7 +4,7 @@ import Spinner from '../../Shared/Spinner';
 import UserRow from './UserRow';
 
 const MakeAdmin = () => {
-    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('https://auto-parts-backend.vercel.app/users/', {
+    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('https://auto-parts-backend.onrender.com/users/', {
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
