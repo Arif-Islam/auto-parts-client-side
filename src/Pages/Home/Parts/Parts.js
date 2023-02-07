@@ -1,17 +1,28 @@
-import React from 'react';
-import { useQuery } from 'react-query';
+import React, { useEffect, useState } from 'react';
 import useProducts from '../../../hooks/useProducts';
 import Spinner from '../../../Shared/Spinner';
 import PartsCard from './PartsCard';
 
 const Parts = () => {
-    const [parts, isLoading] = useProducts();
 
     // if (isLoading) {
     //     return <Spinner></Spinner>;
     // }
 
     // refetch();
+
+    const [parts, setParts] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
+    useEffect(() => {
+        fetch('https://auto-parts-backend.up.railway.app/parts')
+            .then(res => res.json())
+            .then(data => setParts(data))
+        setIsLoading(false);
+    }, [parts]);
+
+    if (isLoading) {
+        return <Spinner></Spinner>;
+    }
 
     return (
         <div>
@@ -22,7 +33,7 @@ const Parts = () => {
             <div className='w-11/12 md:w-4/5 mx-auto pb-16 mb-6'>
                 <div className='flex gap-10 flex-wrap items-center justify-center'>
                     {
-                        isLoading ? <Spinner></Spinner> : [...parts].reverse().slice(0, 6).map(part => <PartsCard
+                        [...parts].reverse().slice(0, 6).map(part => <PartsCard
                             key={part._id}
                             part={part}
                         ></PartsCard>)

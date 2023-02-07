@@ -1,6 +1,7 @@
 import React from 'react';
 
 const Spinner = () => {
+    // console.log('spinner');
     return (
         <div>
             <div className="flex justify-center items-center">
