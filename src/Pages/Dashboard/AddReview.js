@@ -19,7 +19,7 @@ const AddReview = () => {
             rating,
             review
         }
-        fetch('https://auto-parts-backend.onrender.com/reviews', {
+        fetch('https://auto-parts-backend.up.railway.app/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

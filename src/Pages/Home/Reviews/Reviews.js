@@ -4,7 +4,7 @@ import Spinner from '../../../Shared/Spinner';
 import ReviewCard from './ReviewCard';
 
 const Reviews = () => {
-    const { data: reviews, isLoading, refetch } = useQuery('reviews', () => fetch('https://auto-parts-backend.onrender.com/reviews').then(res => res.json()));
+    const { data: reviews, isLoading, refetch } = useQuery('reviews', () => fetch('https://auto-parts-backend.up.railway.app/reviews').then(res => res.json()));
 
     if (isLoading) {
         return <Spinner></Spinner>;

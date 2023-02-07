@@ -13,7 +13,7 @@ const SingleOrder = ({ order }) => {
 
     // const deleteOrder = id => {
     //     if(order.paid === true){
-    //         fetch(`https://auto-parts-backend.onrender.com/orders/${id}`, {
+    //         fetch(`https://auto-parts-backend.up.railway.app/orders/${id}`, {
     //             method: 'DELETE',
     //             headers: {
 

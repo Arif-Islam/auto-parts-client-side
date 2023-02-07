@@ -17,7 +17,7 @@ const Order = () => {
     const [user] = useAuthState(auth);
 
     useEffect(() => {
-        fetch(`https://auto-parts-backend.onrender.com/parts/${id}`)
+        fetch(`https://auto-parts-backend.up.railway.app/parts/${id}`)
             .then(res => res.json())
             .then(data => setProduct(data))
     }, [id]);
@@ -78,7 +78,7 @@ const Order = () => {
             product: name,
             price: productPrice
         };
-        fetch(`https://auto-parts-backend.onrender.com/orders`, {
+        fetch(`https://auto-parts-backend.up.railway.app/orders`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

@@ -4,7 +4,7 @@ import Spinner from "../Shared/Spinner";
 
 
 const useProducts = () => {
-    // const { data: parts, isLoading, refetch } = useQuery('parts', () => fetch('https://auto-parts-backend.onrender.com/parts').then(res => res.json()));
+    // const { data: parts, isLoading, refetch } = useQuery('parts', () => fetch('https://auto-parts-backend.up.railway.app/parts').then(res => res.json()));
 
     // if(isLoading){
     //     return <Spinner></Spinner>
@@ -12,7 +12,7 @@ const useProducts = () => {
     const [parts, setParts] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     useEffect(() => {
-        fetch('https://auto-parts-backend.onrender.com/parts')
+        fetch('https://auto-parts-backend.up.railway.app/parts')
             .then(res => res.json())
             .then(data => setParts(data))
         setIsLoading(false);
