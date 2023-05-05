@@ -12,7 +12,7 @@ const MyOrders = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        fetch(`https://auto-parts-backend.up.railway.app/my_orders?email=${email}`, {
+        fetch(`https://auto-parts-server-rnsc.onrender.com/my_orders?email=${email}`, {
             method: 'GET',
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`

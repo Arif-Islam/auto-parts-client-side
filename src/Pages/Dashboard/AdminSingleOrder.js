@@ -11,7 +11,7 @@ const AdminSingleOrder = ({ order }) => {
 
     const makeShipped = id => {
         const deliver = { shipped: true };
-        fetch(`https://auto-parts-backend.up.railway.app/orders/${id}`, {
+        fetch(`https://auto-parts-server-rnsc.onrender.com/orders/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

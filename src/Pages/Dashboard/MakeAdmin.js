@@ -4,7 +4,7 @@ import Spinner from '../../Shared/Spinner';
 import UserRow from './UserRow';
 
 const MakeAdmin = () => {
-    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('https://auto-parts-backend.up.railway.app/users/', {
+    const { data: users, isLoading, refetch } = useQuery('users', () => fetch('https://auto-parts-server-rnsc.onrender.com/users/', {
         method: 'GET',
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`

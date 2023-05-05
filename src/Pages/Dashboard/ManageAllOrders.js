@@ -6,7 +6,7 @@ import SingleOrder from './SingleOrder';
 
 const ManageAllOrders = () => {
 
-    const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch('https://auto-parts-backend.up.railway.app/orders/').then(res => res.json()));
+    const { data: orders, isLoading, refetch } = useQuery('orders', () => fetch('https://auto-parts-server-rnsc.onrender.com/orders/').then(res => res.json()));
 
     if (isLoading) {
         return <>
@@ -18,7 +18,7 @@ const ManageAllOrders = () => {
 
     // const [orders, setOrders] = useState([]);
     // useEffect(() => {
-    //     fetch('https://auto-parts-backend.up.railway.app/orders')
+    //     fetch('https://auto-parts-server-rnsc.onrender.com/orders')
     //         .then(res => res.json())
     //         .then(data => setOrders(data))
     // }, [orders]);

@@ -14,7 +14,7 @@ const Parts = () => {
     const [parts, setParts] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     useEffect(() => {
-        fetch('https://auto-parts-backend.up.railway.app/parts')
+        fetch('https://auto-parts-server-rnsc.onrender.com/parts')
             .then(res => res.json())
             .then(data => setParts(data))
         setIsLoading(false);
