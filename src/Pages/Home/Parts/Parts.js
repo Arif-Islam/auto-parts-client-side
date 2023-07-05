@@ -34,9 +34,10 @@ const Parts = () => {
       <div className="w-11/12 md:w-4/5 mx-auto pb-16 mb-6">
         <div className="flex gap-10 flex-wrap items-center justify-center">
           {!parts.length && (
-            <p className="text-red-500 text-xl py-5">
+            <p className="text-red-500 text-lg lg:text-xl py-5">
               Please wait. Data fetching from render.com may take a minute (more
-              or less)
+              or less). Or try refreshing the page after a minute. Sorry for the
+              delay!🙏
             </p>
           )}
           {[...parts]
